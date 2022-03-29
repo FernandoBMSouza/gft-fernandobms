@@ -14,19 +14,20 @@ namespace Project03.Entities
             Descricao = descricao;
             ValorReal = valorReal;
         }
-
-        public string Desconto(double percentual)
+        public string Operacao(double percentual, string operacao)
         {
-            double desconto = ValorReal * percentual / 100;
-            ValorFinal = ValorReal - desconto;
-            return $"Valor Final: R$ {ValorFinal.ToString("F2", CultureInfo.InvariantCulture)}";
-        }
-
-        public string Acrescimo(double percentual)
-        {
-            double acrescimo = ValorReal * percentual / 100;
-            ValorFinal = ValorReal + acrescimo;
-            return $"Valor Final: R$ {ValorFinal.ToString("F2", CultureInfo.InvariantCulture)}";
+            if(operacao == "desconto")
+            {
+                double desconto = ValorReal * percentual / 100;
+                ValorFinal = ValorReal - desconto;
+                return $"Valor Final: R$ {ValorFinal.ToString("F2", CultureInfo.InvariantCulture)}";
+            }
+            else
+            {
+                double acrescimo = ValorReal * percentual / 100;
+                ValorFinal = ValorReal + acrescimo;
+                return $"Valor Final: R$ {ValorFinal.ToString("F2", CultureInfo.InvariantCulture)}";
+            }
         }
     }
 }

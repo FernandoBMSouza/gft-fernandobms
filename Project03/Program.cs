@@ -27,10 +27,10 @@ namespace Project03
             switch(op)
             {
                 case 1:
-                    System.Console.WriteLine(p.Acrescimo(percentual));
+                    System.Console.WriteLine(p.Operacao(percentual, "acrescimo"));
                     break;
                 case 2:
-                    System.Console.WriteLine(p.Desconto(percentual));
+                    System.Console.WriteLine(p.Operacao(percentual, "desconto"));
                     break;
                 default:
                     System.Console.WriteLine("Operação Inválida!");
